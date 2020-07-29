@@ -1,6 +1,10 @@
 package main
-
-import "fmt"
+/*
+a score printer
+ */
+import (
+	"fmt"
+)
 
 const (
 	greeting = "hello,%s!\n" //5.因式分解关键字写法
@@ -21,13 +25,13 @@ func main() {
 		averageScore += scores[i]
 	}
 
-	averageScore = calcAverageScore(averageScore, len(courses))
+	averageScore = calcAverScore(averageScore, len(courses))
 
 	fmt.Printf("average score : %f\n", averageScore)
 	fmt.Printf("rank : %d\n", rank)
 }
 
-func calcAverageScore(score float64, count int) float64 {
+func calcAverScore(score float64, count int) float64 {
 	score /= float64(count)
 	return score
 }
