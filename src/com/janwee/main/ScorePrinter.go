@@ -23,15 +23,16 @@ func main() {
 	for i, course := range courses {
 		fmt.Printf(getFormatAndCourseAndScore(scores,course,i))
 		averageScore += scores[i]
+		passed = passed && scores[i]>=60
 	}
 
-	averageScore = calcAverScore(averageScore, len(courses))
+	averageScore = calcAverageScore(averageScore, len(courses))
 
 	fmt.Printf("average score : %f\n", averageScore)
 	fmt.Printf("rank : %d\n", rank)
 }
 
-func calcAverScore(score float64, count int) float64 {
+func calcAverageScore(score float64, count int) float64 {
 	score /= float64(count)
 	return score
 }
