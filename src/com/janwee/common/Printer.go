@@ -23,12 +23,18 @@ func PrintRank(rank int) {
 }
 
 func PrintScore(s *Student){
+	PrintLine()
 	PrintGreeting(s.GetName())
 	PrintPassed(s.passed)
 	for course := range s.scoreMap {
 		score := s.scoreMap[course]
-		fmt.Printf("course : %s ,score : %f\n",course,score)
+		fmt.Printf("course : %s ,score : %f\n", course, score)
 	}
 	PrintAverageScore(s.averageScore)
 	PrintRank(s.rank)
+	PrintLine()
+}
+
+func PrintLine() (int, error) {
+	return fmt.Println("-------------------------------------")
 }
