@@ -23,7 +23,7 @@ func PrintRank(rank int) {
 }
 
 func PrintScore(s *Student){
-	PrintGreeting(s.name)
+	PrintGreeting(s.GetName())
 	PrintPassed(s.passed)
 	for course := range s.scoreMap {
 		score := s.scoreMap[course]
